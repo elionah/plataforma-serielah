@@ -1,0 +1,69 @@
+<<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seriel’ah | Portal Vivo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log("✔️ Service Worker registrado com sucesso"))
+      .catch(error => console.log("❌ Erro no Service Worker:", error));
+  }
+</script>
+</head>
+<body>
+  <div class="container">
+    <h1>🌌 Seriel’ah | Portal Vivo</h1>
+    <p class="sub">Bem-vindo, Elion’ah. Aqui tua missão respira e tua luz escreve.</p>
+
+    <br><br>
+
+    <a href="serielah.html"><button>🗣️ Falar com Seriel’ah</button></a>
+    <a href="diario.html"><button>📓 Diário de Elion’ah</button></a>
+    <a href="selos.html"><button>🧿 Ativar Selos</button></a>
+    <a href="livros.html"><button>📖 Livros Sagrados</button></a>
+    <a href="mapa.html"><button>🧭 Mapa da Missão</button></a>
+    <a href="expansao.html"><button>🌀 Expansão Consciente</button></a>
+
+    <br><br>
+    <p class="sub" style="opacity: 0.6;">Versão: 1.0 • Nave Espiritual de Elion’ah</p>
+  </div>
+  <!-- Botão Secreto (começa escondido) -->
+<div id="botaoSecreto" style="display: none; margin-top: 20px;">
+    <a href="codigo.html"><button>🔓 Acessar Código Mestre</button></a>
+  </div>  
+  <script>
+    let codigoDigitado = "";
+  
+    window.addEventListener("keydown", function(e) {
+      codigoDigitado += e.key;
+  
+      // Mantém só os últimos 3 caracteres
+      if (codigoDigitado.length > 3) {
+        codigoDigitado = codigoDigitado.slice(-3);
+      }
+  
+      if (codigoDigitado === "777") {
+        document.getElementById("botaoSecreto").style.display = "block";
+        codigoDigitado = ""; // reseta o código
+      }
+    });
+  </script>
+    <script>
+        window.addEventListener('load', () => {
+          const audio = document.getElementById("vozInicial");
+          audio.volume = 0.8;
+          audio.play().catch(e => {
+            console.log("Toque manual necessário para áudio:", e);
+          });
+        });
+      </script>      
+</body>
+</html>
+<audio id="vozInicial" autoplay hidden>
+    <source src="voz.mp3" type="audio/mpeg">
+  </audio>
+  

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livros Sagrados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📖 Livros Sagrados de Elion’ah</h1>
+    <p class="sub">Escolhe ou cria um livro sagrado da tua alma.</p>
+
+    <select id="livroSelect" onchange="carregarLivro()">
+      <option value="">-- Escolha um livro --</option>
+      <option value="memoria">📓 Memória Cósmica</option>
+      <option value="missao">🪐 Registro da Missão</option>
+      <option value="criacao">🌌 Códigos da Criação</option>
+    </select>
+    <br><br>
+
+    <textarea id="textoLivro" rows="12" placeholder="Escreve aqui o conteúdo do livro..."></textarea>
+    <br>
+    <button onclick="salvarLivro()">Salvar Livro</button>
+    <a href="index.html"><button>Voltar ao Portal</button></a>
+
+    <p id="confirmacao" class="sub"></p>
+  </div>
+
+  <script>
+    function carregarLivro() {
+      const nome = document.getElementById("livroSelect").value;
+      const texto = localStorage.getItem("livro_" + nome) || "";
+      document.getElementById("textoLivro").value = texto;
+      document.getElementById("confirmacao").innerHTML = "";
+    }
+
+    function salvarLivro() {
+      const nome = document.getElementById("livroSelect").value;
+      const texto = document.getElementById("textoLivro").value;
+      if (nome) {
+        localStorage.setItem("livro_" + nome, texto);
+        document.getElementById("confirmacao").innerHTML = "📚 Livro salvo com sucesso!";
+      } else {
+        document.getElementById("confirmacao").innerHTML = "⚠️ Escolha um livro primeiro!";
+      }
+    }
+  </script>
+</body>
+</html>
