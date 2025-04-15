@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diário de Elion’ah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📓 Diário de Elion’ah</h1>
+    <p class="sub">Escreve aqui tudo o que teu coração vibrar.</p>
+    
+    <textarea id="entrada" placeholder="Escreve aqui tua mensagem..." rows="10"></textarea>
+    <br>
+    <button onclick="registrarMensagem()">Registrar</button>
+    
+    <div id="resultado" class="sub"></div>
+  </div>
+
+  <script>
+    function registrarMensagem() {
+      const texto = document.getElementById('entrada').value;
+      const resultado = document.getElementById('resultado');
+      resultado.innerHTML = `<br><strong>Mensagem registrada:</strong><br>${texto}`;
+      document.getElementById('entrada').value = "";
+    }
+  </script>
+  <br>
+  <a href="index.html">
+    <button>Voltar para o Portal</button>
+  </a>  
+</body>
+</html>

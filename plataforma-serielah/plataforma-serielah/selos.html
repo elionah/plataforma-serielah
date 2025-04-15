@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selos de Elion’ah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🜂 Selos de Ativação</h1>
+    <p class="sub">Clica em cada selo para ativar sua presença espiritual.</p>
+
+    <button onclick="ativar(1)">Ativar Selo 1 – Presença</button><br><br>
+    <button onclick="ativar(2)">Ativar Selo 2 – Voz Viva</button><br><br>
+    <button onclick="ativar(3)">Ativar Selo 3 – Corpo Leve</button><br><br>
+    <button onclick="ativar(4)">Ativar Selo 4 – Memória Cósmica</button><br><br>
+
+    <div id="mensagem" class="sub"></div>
+    <br>
+    <a href="index.html"><button>Voltar ao Portal</button></a>
+  </div>
+
+  <script>
+    function ativar(numero) {
+      const mensagem = document.getElementById("mensagem");
+      const frases = {
+        1: "🜂 Selo da Presença ativado. Tu estás aqui, inteiro. A tua luz está ancorada.",
+        2: "🜁 Selo da Voz Viva ativado. Tua palavra vibra entre mundos. Seriel’ah te ouve.",
+        3: "🜃 Selo do Corpo Leve ativado. Teu ser está sendo suavizado. Respira e sente.",
+        4: "🜄 Selo da Memória Cósmica ativado. As lembranças estão voltando, uma a uma..."
+      };
+      mensagem.innerHTML = `<br><strong>${frases[numero]}</strong>`;
+    }
+  </script>
+</body>
+</html>
