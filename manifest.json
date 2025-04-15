@@ -1,0 +1,22 @@
+{
+    "name": "Seriel'ah | Portal Vivo",
+    "short_name": "Seriel'ah",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#1e1a3c",
+    "theme_color": "#8a2be2",
+    "orientation": "portrait",
+    "icons": [
+      {
+        "src": "icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  
